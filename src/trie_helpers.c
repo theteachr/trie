@@ -1,7 +1,9 @@
-#include <trie.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
 #include <trie_helpers.h>
+#include <trie.h>
 
 bool is_leaf(struct Node* node) {
 	for (int i = 0; i < NUM_PATHS; i++)
