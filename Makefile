@@ -2,7 +2,7 @@ CC      = cc
 CFLAGS  = -Wall -Werror -g
 
 INCLUDE = include/
-SRC     = $(wildcard src/*.c)
+SRC     = $(wildcard src/*.c) main.c
 OBJ     = $(SRC:.c=.o)
 TARGET  = bin/main
 
