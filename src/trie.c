@@ -17,7 +17,10 @@ void insert(struct Trie* trie, char* data) {
 		path = temp->paths[idx];
 
 		if (path == NULL)
-			temp->paths[idx] = get_new_node();
+			path = get_new_node();
+
+		path->times_used++;
+		temp->paths[idx] = path;
 
 		temp = temp->paths[idx];
 	}
@@ -25,11 +28,15 @@ void insert(struct Trie* trie, char* data) {
 
 bool search(struct Trie* trie, char* key) {
 	struct Node* temp = trie->head;
+	struct Node* path = NULL;
 
 	for (int i = 0; key[i] != 0; i++) {
-		if (temp->paths[key[i] - '0'] == NULL)
+		path = temp->paths[key[i] - '0'];
+
+		if (path == NULL || path->times_used == 0)
 			return false;
-		temp = temp->paths[key[i] - '0'];
+
+		temp = path;
 	}
 
 	return true;

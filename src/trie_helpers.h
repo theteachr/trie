@@ -1,4 +1,5 @@
 struct Node {
+	int times_used;
 	struct Node** paths;
 };
 
