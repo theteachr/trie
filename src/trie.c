@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <trie.h>
-#include <trie_helpers.h>
+#include "trie.h"
+#include "trie_helpers.h"
 
 void init_trie(struct Trie* trie) {
 	trie->head = get_new_node();
