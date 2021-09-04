@@ -7,6 +7,21 @@ void init_trie(struct Trie* trie) {
 	trie->head = get_new_node();
 }
 
+void delete(struct Trie* trie, char* data) {
+	struct Node* temp = trie->head;
+	struct Node* path = NULL;
+
+	for (int i = 0; data[i] != 0; i++) {
+		path = temp->paths[data[i] - '0'];
+
+		if (path == NULL || path->times_used == 0)
+			return;
+
+		path->times_used--;
+		temp = path;
+	}
+}
+
 void insert(struct Trie* trie, char* data) {
 	struct Node* temp = trie->head;
 	struct Node* path = NULL;
