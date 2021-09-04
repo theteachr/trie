@@ -1,19 +1,17 @@
 CC      = cc
 CFLAGS  = -Wall -Werror -g
 
-INCLUDE = include/
-SRC     = $(wildcard src/*.c) main.c
+SRC     = $(wildcard src/*.c)
 OBJ     = $(SRC:.c=.o)
-TARGET  = bin/main
 
 %.o: %.c
-	$(CC) -I $(INCLUDE) -c $< -o $@
+	$(CC) -c $< -o $@
 
-bin/main: $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(TARGET)
+main: $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -o main
 
 test: $(TARGET)
-	bin/main
+	./main
 
 clean:
 	rm -rf $(TARGET) $(OBJ)
