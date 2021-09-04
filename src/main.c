@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <trie.h>
+#include "trie.h"
 
 int main(void) {
 	char *zip_code_data[] = {
