@@ -1,4 +1,4 @@
 # TODO
 
 - [ ] Handle deletion
-  - [ ] Introduce a count in `Node`
+  - [x] Introduce a count in `Node`
