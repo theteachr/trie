@@ -15,3 +15,5 @@ test: main
 
 clean:
 	rm -rf $(TARGET) $(OBJ)
+
+.PHONY: clean test
