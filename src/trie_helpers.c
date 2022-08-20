@@ -5,7 +5,8 @@
 #include "trie_helpers.h"
 #include "trie.h"
 
-bool is_leaf(struct Node* node) {
+bool is_leaf(struct Node* node)
+{
 	for (int i = 0; i < NUM_PATHS; i++)
 		if (node->paths[i] != NULL)
 			return false;
@@ -13,20 +14,24 @@ bool is_leaf(struct Node* node) {
 	return true;
 }
 
-struct Node* get_next_node(struct Node* node) {
+struct Node* get_next_node(struct Node* node)
+{
 	for (int i = 0; i < NUM_PATHS; i++)
 		if (node->paths[i] != NULL)
 			return node->paths[i];
+
 	return NULL;
 }
 
-void print_node(struct Node* node) {
+void print_node(struct Node* node)
+{
 	for (int i = 0; i < NUM_PATHS; i++)
 		printf("%c ", (node->paths[i] == NULL) ? i + '0' : 'x');
 	printf("\n");
 }
 
-void print_trie(struct Trie* trie) {
+void print_trie(struct Trie* trie)
+{
 	struct Node* temp = trie->head;
 
 	while (!is_leaf(temp)) {
@@ -35,7 +40,8 @@ void print_trie(struct Trie* trie) {
 	}
 }
 
-struct Node* get_new_node() {
+struct Node* get_new_node()
+{
 	struct Node* new_node = malloc(sizeof(struct Node*));
 	struct Node** paths = malloc(NUM_PATHS * sizeof(struct Node*));
 

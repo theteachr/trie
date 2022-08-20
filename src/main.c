@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include "trie.h"
 
-int main(void) {
+int main(void)
+{
 	char *zip_code_data[] = {
 		"781109",
 		"560782",

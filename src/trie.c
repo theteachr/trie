@@ -3,11 +3,13 @@
 #include "trie.h"
 #include "trie_helpers.h"
 
-void init_trie(struct Trie* trie) {
+void init_trie(struct Trie* trie)
+{
 	trie->head = get_new_node();
 }
 
-void delete(struct Trie* trie, char* data) {
+void delete(struct Trie* trie, char* data)
+{
 	struct Node* temp = trie->head;
 	struct Node* path = NULL;
 
@@ -22,7 +24,8 @@ void delete(struct Trie* trie, char* data) {
 	}
 }
 
-void insert(struct Trie* trie, char* data) {
+void insert(struct Trie* trie, char* data)
+{
 	struct Node* temp = trie->head;
 	struct Node* path = NULL;
 	int idx;
@@ -41,7 +44,8 @@ void insert(struct Trie* trie, char* data) {
 	}
 }
 
-bool search(struct Trie* trie, char* key) {
+bool search(struct Trie* trie, char* key)
+{
 	struct Node* temp = trie->head;
 	struct Node* path = NULL;
 
