@@ -16,8 +16,13 @@ void delete(struct Trie* trie, char* data)
 	for (int i = 0; data[i] != 0; i++) {
 		path = temp->paths[data[i] - '0'];
 
-		if (path == NULL || path->times_used == 0)
+		if (path == NULL)
 			return;
+
+		if (path->times_used == 0) {
+			free(path);
+			return;
+		}
 
 		path->times_used--;
 		temp = path;

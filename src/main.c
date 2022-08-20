@@ -17,8 +17,9 @@ int main(void)
 		insert(&zip_codes, zip_code_data[i]);
 
 	print_trie(&zip_codes);
+	delete(&zip_codes, "789663");
 
-	char* key = "560782";
+	char* key = "781109";
 
 	printf("%s was%sfound.\n", key, search(&zip_codes, key) ? " " : " not ");
 
